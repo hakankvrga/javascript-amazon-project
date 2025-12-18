@@ -656,5 +656,33 @@ const products = [
       "apparel",
       "mens"
     ]
-  }
+  },
+  {
+    id: "15b6fd444f-327a-4ec4-896f-486349e85a3d",
+    image: "images/products/backpack.jpg",
+    name: "Backpack",
+    rating: {
+      stars: 4,
+      count: 127
+    },
+    priceCents: 2095,
+    keywords: [
+      "sports",
+      "Backpacks"
+    ]
+  },
+  {
+    id: "15sfsfa6fc6f-327a-4ec4-896f-486349e85a3d",
+    image: "images/products/umbrella.jpg",
+    name: "Umbrella",
+    rating: {
+      stars: 5,
+      count: 500
+    },
+    priceCents: 1000,
+    keywords: [
+      "sports",
+      "basketballs"
+    ]
+  },
 ];
