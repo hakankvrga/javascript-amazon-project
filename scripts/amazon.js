@@ -1,5 +1,6 @@
-import { cart } from "../data/cart.js";
+import { cart, addToCart } from "../data/cart.js";
 import { products } from "../data/products.js";
+
 
 let productsHTML= '';
 
@@ -60,6 +61,23 @@ products.forEach((product)=>{
 
 document.querySelector('.js-products-grid').innerHTML= productsHTML;
 
+function showAddedMessage(addedElement){
+     addedElement.classList.add('show-added-message');
+       
+     setTimeout(()=>{
+        addedElement.classList.remove('show-added-message');
+     },2000);
+}
+
+function calculateCartQuantity(cart){
+    let cartQuantity=0;
+    cart.forEach((cartItem) =>{
+        cartQuantity +=cartItem.quantity;
+    });
+
+    return cartQuantity;
+}
+
 document.querySelectorAll('.js-add-to-cart')
     .forEach((button) =>{
         button.addEventListener('click', () =>{
@@ -67,37 +85,13 @@ document.querySelectorAll('.js-add-to-cart')
           let selectElement =document.querySelector(`.js-quantity-selector-${productId}`);
          
           let addedElement =document.querySelector(`.js-added-${productId}`);
-          addedElement.classList.add('show-added-message');
-          
-          
-          setTimeout(()=>{
-            addedElement.classList.remove('show-added-message');
-          },2000);
          
-          let matchingItem; 
-
-          cart.forEach((item) =>{
-            if(productId === item.productId){
-                matchingItem =item;
-            }
-          });
-
-          if(matchingItem){
-            matchingItem.quantity += Number(selectElement.value);
-          }else {
-            cart.push({
-             productId: productId,
-             quantity: Number(selectElement.value)
-          });
-          }
+          showAddedMessage(addedElement);
+         
+          addToCart(productId, selectElement);
           
-          let cartQuantity=0;
-          cart.forEach((item) =>{
-            cartQuantity +=item.quantity;
-          });
-
           document.querySelector('.js-cart-quantity')
-            .innerHTML= cartQuantity;
+            .innerHTML= calculateCartQuantity(cart);
          
           
         });
