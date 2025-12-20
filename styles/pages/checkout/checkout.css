@@ -20,6 +20,8 @@
   margin-bottom: 18px;
 }
 
+
+
 .checkout-grid {
   display: grid;
   /* Here, 1fr means the first column will take
@@ -208,4 +210,25 @@
 
   margin-top: 11px;
   margin-bottom: 15px;
+}
+
+.quantity-input{
+  width: 30px;
+  display: none;
+}
+
+.js-hide{
+  display: none;
+}
+
+.is-editing-quantity .js-hide{
+  display: initial;
+}
+
+.is-editing-quantity .js-update-quantity-link{
+  display:none;
+}
+
+.is-editing-quantity .js-quantity-label{
+  display:none;
 }
