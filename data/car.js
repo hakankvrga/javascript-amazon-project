@@ -48,24 +48,7 @@ const car1= new Car({brand:'Toyota', model:'Corolla'});
 
 const car2 = new Car({brand:'Tesla', model:'Model 3'});
 
-car1.go();
-car1.go();
-car1.go();
-car1.go();
-car1.go();
-car2.brake();
-car1.brake();
 
-car2.openTruck();
-car1.openTruck();
-
-
-
-car1.displayInfo();
-car2.displayInfo();
-
-console.log(car1);
-console.log(car2);
 
 
 class RaceCar extends Car{
@@ -96,8 +79,3 @@ class RaceCar extends Car{
 
 const raceCar1= new RaceCar({brand:'Mclaren', model:'F1', acceleration: 20});
 
-
-raceCar1.go();
-raceCar1.go();
-raceCar1.displayInfo();
-console.log(raceCar1);
