@@ -20,8 +20,6 @@ async function loadPage(){
     }catch(error){
         console.log('unexpected error. Please try again later.');
     }
-   
-    
 
     renderOrderSummary();
     renderPaymentSummary();
